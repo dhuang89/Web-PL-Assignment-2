@@ -1,0 +1,57 @@
+<!-- Dennis Huang dlh4fx -->
+<html>
+<head>
+	<title> CS 4640 Assignment 2 </title>
+</head>
+
+<body>
+
+	<h1> Jeopardy Game </h1> <br>
+
+	<h3> Create a Question </h3> <br>
+	<p> Choose a type of question to create.</p> <br>
+
+	<select id="questions" onchange="formSelect()"> 
+		<option disabled selected value> -- select an option -- </option>
+  		<option value="mul">Multiple Choice</option> 
+  		<option value="truefalse">True/False</option> 
+  		<option value="short">Short Answer</option> 
+	</select> <br> <br>
+
+	<form id ="multiple_choice" method="post" action="formHandler.php"> 
+  		Question: <br><input type="text" name="question" required="true" />  <br> <br>
+  		Answer:<br>
+  		<input type="radio" name="Answer" checked>A. <input type="text" name="A" required="true" /><br>
+		<input type="radio" name="Answer" >B. <input type="text" name="B" required="true" /><br>
+		<input type="radio" name="Answer" >C. <input type="text" name="C" required="true" /><br>
+		<input type="radio" name="Answer" >D. <input type="text" name="D" required="true" /><br> <br>
+  		
+  		<button type="submit" value="Submit"> Submit</button> &nbsp;&nbsp;&nbsp;
+  		<button type="reset" value="Reset"> Clear</button>
+	</form> 
+
+	<form id ="true_false" method="post" action="formHandler.php"> 
+  		Question: <br><input type="text" name="question" required="true" />  <br> <br>
+  		Answer:<br>
+  		<input type="radio" name="Answer" checked>True <br>
+		<input type="radio" name="Answer" >False <br> <br>
+  		
+  		<button type="submit" value="Submit"> Submit</button> &nbsp;&nbsp;&nbsp;
+  		<button type="reset" value="Reset"> Clear</button>
+	</form> 
+
+	<form id ="short_answer" method="post" action="formHandler.php"> 
+  		Question: <br><input type="text" name="question" required="true" />  <br> <br>
+  		Answer:<br>
+  		<textarea rows="8" cols="50"></textarea> <br>
+  		
+  		<button type="submit" value="Submit"> Submit</button> &nbsp;&nbsp;&nbsp;
+  		<button type="reset" value="Reset"> Clear</button>
+	</form> 
+
+
+	<script src="functions.js" type="text/javascript"></script>
+
+</body>
+
+</html>
