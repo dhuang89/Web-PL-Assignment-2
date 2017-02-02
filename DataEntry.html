@@ -4,6 +4,49 @@
 	<title> CS 4640 Assignment 2 </title>
 </head>
 
+<script> 
+function validateForm(type) {
+  if (type == "mul") {
+    var x = document.forms["form1"]["question"].value;
+    var a = document.forms["form1"]["A"].value;
+    var b = document.forms["form1"]["B"].value;
+    var c = document.forms["form1"]["C"].value;
+    var d = document.forms["form1"]["D"].value;
+    if (x == "") {
+      alert("Question field must be filled out.");
+      return false;
+    }
+    if (a == "" || b  == "" || c == "" || d == "") {
+      alert("Answer choices must be filled out.");
+      return false;
+    }
+  }
+
+  if (type == "tru") {
+    var x = document.forms["form2"]["question2"].value;
+    if (x == "") {
+      alert("Question field must be filled out.");
+      return false;
+    }
+  }
+
+  if (type == "short") {
+    var x = document.forms["form3"]["question3"].value;
+    var y = document.forms["form3"]["response"].value;
+
+    if (x == "") {
+      alert("Question field must be filled out.");
+      return false;
+    }
+
+    if (y == "") {
+      alert("Answer field must be filled out.");
+      return false;
+    }
+  }
+  
+}
+</script>
 <body>
 
 	<h1> Jeopardy Game </h1> <br>
@@ -18,20 +61,20 @@
   		<option value="short">Short Answer</option> 
 	</select> <br> <br>
 
-	<form id ="multiple_choice" method="post" action="formHandler.php"> 
-  		Question: <br><input type="text" name="question" required="true" />  <br> <br>
+	<form id ="multiple_choice" method="post" action="formHandler.php" name="form1" onsubmit="return validateForm('mul')"> 
+  		Question: <br><input type="text" name="question" />  <br> <br>
   		Answer:<br>
-  		<input type="radio" name="Answer" checked>A. <input type="text" name="A" required="true" /><br>
-		<input type="radio" name="Answer" >B. <input type="text" name="B" required="true" /><br>
-		<input type="radio" name="Answer" >C. <input type="text" name="C" required="true" /><br>
-		<input type="radio" name="Answer" >D. <input type="text" name="D" required="true" /><br> <br>
+  		<input type="radio" name="Answer" checked>A. <input type="text" name="A"/><br>
+		<input type="radio" name="Answer" >B. <input type="text" name="B"/><br>
+		<input type="radio" name="Answer" >C. <input type="text" name="C"/><br>
+		<input type="radio" name="Answer" >D. <input type="text" name="D"/><br> <br>
   		
   		<button type="submit" value="Submit"> Submit</button> &nbsp;&nbsp;&nbsp;
   		<button type="reset" value="Reset"> Clear</button>
 	</form> 
 
-	<form id ="true_false" method="post" action="formHandler.php"> 
-  		Question: <br><input type="text" name="question" required="true" />  <br> <br>
+	<form id ="true_false" method="post" action="formHandler.php" name="form2" onsubmit="return validateForm('tru')"> 
+  		Question: <br><input type="text" name="question2"/>  <br> <br>
   		Answer:<br>
   		<input type="radio" name="Answer" checked>True <br>
 		<input type="radio" name="Answer" >False <br> <br>
@@ -40,10 +83,10 @@
   		<button type="reset" value="Reset"> Clear</button>
 	</form> 
 
-	<form id ="short_answer" method="post" action="formHandler.php"> 
-  		Question: <br><input type="text" name="question" required="true" />  <br> <br>
+	<form id ="short_answer" method="post" action="formHandler.php" name="form3" onsubmit="return validateForm('short')"> 
+  		Question: <br><input type="text" name="question3"/>  <br> <br>
   		Answer:<br>
-  		<textarea rows="8" cols="50"></textarea> <br>
+  		<textarea rows="8" cols="50" name="response"></textarea> <br>
   		
   		<button type="submit" value="Submit"> Submit</button> &nbsp;&nbsp;&nbsp;
   		<button type="reset" value="Reset"> Clear</button>
