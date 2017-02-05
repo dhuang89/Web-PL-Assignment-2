@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title> CS 4640 Assignment 2 </title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <script> 
@@ -46,6 +47,14 @@ function validateForm(type) {
   }
   
 }
+
+function highlight(field) {
+  field.style.background="cyan";
+}
+
+function removeFocus(field) {
+  field.style.background="white";
+}
 </script>
 <body>
 
@@ -61,20 +70,20 @@ function validateForm(type) {
   		<option value="short">Short Answer</option> 
 	</select> <br> <br>
 
-	<form id ="multiple_choice" method="post" action="formHandler.php" name="form1" onsubmit="return validateForm('mul')"> 
-  		Question: <br><input type="text" name="question" />  <br> <br>
+	<form id ="multiple_choice" method="post" action="formHandler.php" name="form1" onsubmit="return validateForm('mul')" > 
+  		Question: <br><input type="text" name="question" onfocus="highlight(this)" onblur="removeFocus(this)"/>  <br> <br>
   		Answer:<br>
-  		<input type="radio" name="Answer" checked>A. <input type="text" name="A"/><br>
-		<input type="radio" name="Answer" >B. <input type="text" name="B"/><br>
-		<input type="radio" name="Answer" >C. <input type="text" name="C"/><br>
-		<input type="radio" name="Answer" >D. <input type="text" name="D"/><br> <br>
+  		<input type="radio" name="Answer" checked>A. <input type="text" name="A" onfocus="highlight(this)" onblur="removeFocus(this)"/><br>
+		<input type="radio" name="Answer" >B. <input type="text" name="B" onfocus="highlight(this)" onblur="removeFocus(this)"/><br>
+		<input type="radio" name="Answer" >C. <input type="text" name="C" onfocus="highlight(this)" onblur="removeFocus(this)"/><br>
+		<input type="radio" name="Answer" >D. <input type="text" name="D" onfocus="highlight(this)" onblur="removeFocus(this)"/><br> <br>
   		
   		<button type="submit" value="Submit"> Submit</button> &nbsp;&nbsp;&nbsp;
   		<button type="reset" value="Reset"> Clear</button>
 	</form> 
 
 	<form id ="true_false" method="post" action="formHandler.php" name="form2" onsubmit="return validateForm('tru')"> 
-  		Question: <br><input type="text" name="question2"/>  <br> <br>
+  		Question: <br><input type="text" name="question2" onfocus="highlight(this)" onblur="removeFocus(this)"/>  <br> <br>
   		Answer:<br>
   		<input type="radio" name="Answer" checked>True <br>
 		<input type="radio" name="Answer" >False <br> <br>
@@ -84,9 +93,9 @@ function validateForm(type) {
 	</form> 
 
 	<form id ="short_answer" method="post" action="formHandler.php" name="form3" onsubmit="return validateForm('short')"> 
-  		Question: <br><input type="text" name="question3"/>  <br> <br>
+  		Question: <br><input type="text" name="question3" onfocus="highlight(this)" onblur="removeFocus(this)"/>  <br> <br>
   		Answer:<br>
-  		<textarea rows="8" cols="50" name="response"></textarea> <br>
+  		<textarea rows="8" cols="50" name="response" onfocus="highlight(this)" onblur="removeFocus(this)"></textarea> <br>
   		
   		<button type="submit" value="Submit"> Submit</button> &nbsp;&nbsp;&nbsp;
   		<button type="reset" value="Reset"> Clear</button>
