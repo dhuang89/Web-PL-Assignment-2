@@ -1,4 +1,5 @@
-<!-- Dennis Huang dlh4fx -->
+<!-- Dennis Huang dlh4fx 
+Wyatt TInsley wtj6tq -->
 <html>
 <head>
 	<title> CS 4640 Assignment 2 </title>
@@ -6,6 +7,8 @@
 </head>
 
 <script> 
+//function that checks all fields to make sure they are filled out 
+//type is value of dropdown menu user has selected, each kind of question will have different forms to fill
 function validateForm(type) {
   if (type == "mul") {
     var x = document.forms["form1"]["question"].value;
@@ -48,17 +51,21 @@ function validateForm(type) {
   
 }
 
+//when user focuses on field, it is highlighted
 function highlight(field) {
   field.style.background="cyan";
 }
 
+//when user does not focus on field, it is changed back to its original color
 function removeFocus(field) {
   field.style.background="white";
 }
 </script>
 <body>
 
-	<h1> Jeopardy Game </h1> <br>
+	<h1> Jeopardy Game </h1> 
+
+  <h3> By: Dennis Huang and Wyatt Tinsley </h3> <br>
 
 	<h3> Create a Question </h3> <br>
 	<p> Choose a type of question to create.</p> <br>
@@ -70,29 +77,32 @@ function removeFocus(field) {
   		<option value="short">Short Answer</option> 
 	</select> <br> <br>
 
-	<form id ="multiple_choice" method="post" action="formHandler.php" name="form1" onsubmit="return validateForm('mul')" > 
+	<form id ="multiple_choice" method="post" action="formHandler.php" name="form1" onsubmit="return validateForm('mul')" >
+    <p>Enter multiple choice question and answer. </p> <br>  
   		Question: <br><input type="text" name="question" onfocus="highlight(this)" onblur="removeFocus(this)"/>  <br> <br>
   		Answer:<br>
-  		<input type="radio" name="Answer" checked>A. <input type="text" name="A" onfocus="highlight(this)" onblur="removeFocus(this)"/><br>
-		<input type="radio" name="Answer" >B. <input type="text" name="B" onfocus="highlight(this)" onblur="removeFocus(this)"/><br>
-		<input type="radio" name="Answer" >C. <input type="text" name="C" onfocus="highlight(this)" onblur="removeFocus(this)"/><br>
-		<input type="radio" name="Answer" >D. <input type="text" name="D" onfocus="highlight(this)" onblur="removeFocus(this)"/><br> <br>
+  		<input type="radio" name="Answer" value="A" checked>A. <input type="text" name="A" onfocus="highlight(this)" onblur="removeFocus(this)"/><br>
+		<input type="radio" name="Answer" value="B" >B. <input type="text" name="B" onfocus="highlight(this)" onblur="removeFocus(this)"/><br>
+		<input type="radio" name="Answer" value="C">C. <input type="text" name="C" onfocus="highlight(this)" onblur="removeFocus(this)"/><br>
+		<input type="radio" name="Answer" value="D">D. <input type="text" name="D" onfocus="highlight(this)" onblur="removeFocus(this)"/><br> <br>
   		
   		<button type="submit" value="Submit"> Submit</button> &nbsp;&nbsp;&nbsp;
   		<button type="reset" value="Reset"> Clear</button>
 	</form> 
 
 	<form id ="true_false" method="post" action="formHandler.php" name="form2" onsubmit="return validateForm('tru')"> 
+    <p>Enter true/false question and answer. </p> <br>  
   		Question: <br><input type="text" name="question2" onfocus="highlight(this)" onblur="removeFocus(this)"/>  <br> <br>
   		Answer:<br>
-  		<input type="radio" name="Answer" checked>True <br>
-		<input type="radio" name="Answer" >False <br> <br>
+  		<input type="radio" name="Answer2" value="True" checked>True <br>
+		<input type="radio" name="Answer2" value="False">False <br> <br>
   		
   		<button type="submit" value="Submit"> Submit</button> &nbsp;&nbsp;&nbsp;
   		<button type="reset" value="Reset"> Clear</button>
 	</form> 
 
 	<form id ="short_answer" method="post" action="formHandler.php" name="form3" onsubmit="return validateForm('short')"> 
+    <p>Enter short answer question and response. </p> <br>  
   		Question: <br><input type="text" name="question3" onfocus="highlight(this)" onblur="removeFocus(this)"/>  <br> <br>
   		Answer:<br>
   		<textarea rows="8" cols="50" name="response" onfocus="highlight(this)" onblur="removeFocus(this)"></textarea> <br>

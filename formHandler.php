@@ -15,65 +15,65 @@
       <td align="center"><string>Value</string></td>
     </tr>
     <tr>
-      <td width="20%">MAILTO</td>
-      <td></td>      
+      <td width="20%">question</td>
+      <td><?php if (isset($_POST["question"])) {
+          echo $_POST["question"]; 
+      } ?></td> 
     </tr>
     <tr>
-      <td width="20%">FName</td> 
-      <td></td>      
+      <td width="20%">question2</td> 
+      <td><?php if (isset($_POST["question2"])) {
+          echo $_POST["question2"]; 
+      } ?></td>      
     </tr>
     <tr>
-      <td width="20%">LName</td>
-      <td></td>      
+      <td width="20%">question3</td>
+      <td><?php if (isset($_POST["question3"])) {
+          echo $_POST["question3"]; 
+      } ?></td>      
     </tr>
     <tr>
-      <td width="20%">Major</td>
-      <td></td>      
+      <td width="20%">Answer A</td>
+      <td><?php if (isset($_POST["A"])) {
+          echo $_POST["A"]; 
+      } ?></td>      
     </tr>
     <tr>
-      <td width="20%">OtherMajor</td>
-      <td></td>      
+      <td width="20%">Answer B</td>
+      <td><?php if (isset($_POST["B"])) {
+          echo $_POST["B"]; 
+      } ?></td>      
     </tr>
     <tr>
-      <td width="20%">EmailAddress</td>
-      <td></td>      
+      <td width="20%">Answer C</td>
+      <td><?php if (isset($_POST["C"])) {
+          echo $_POST["C"]; 
+      } ?></td>      
     </tr>
     <tr>
-      <td width="20%">Phone</td>
-      <td></td>      
+      <td width="20%">Answer D</td>
+      <td><?php if (isset($_POST["D"])) {
+          echo $_POST["D"]; 
+      } ?></td>      
     </tr>
     <tr>
-      <td width="20%">WebSiteURL</td>
-      <td></td>      
+      <td width="20%">Multiple Choice Answer</td>
+      <td><?php if (isset($_POST["Answer"])) {
+          echo $_POST["Answer"]; 
+      } ?></td>      
     </tr>
     <tr>
-      <td width="20%">LevelHTML</td>
-      <td></td>      
+      <td width="20%">True/False Answer</td>
+      <td><?php if (isset($_POST["Answer2"])) {
+          echo $_POST["Answer2"]; 
+      } ?></td>      
     </tr>
     <tr>
-      <td width="20%">LevelJava</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">LevelJS</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">LevelServlets</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">LevelJSP</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">NewOrUpdate</td>
-      <td></td>      
-    </tr>
-    <tr>
-      <td width="20%">submit</td>
-      <td></td>      
-    </tr>    
+      <td width="20%">Short Answer Response</td>
+      <td><?php if (isset($_POST["response"])) {
+          echo $_POST["response"]; 
+      } ?></td>      
+    </tr>  
   </table>
 
 </body>

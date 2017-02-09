@@ -1,5 +1,7 @@
 //Dennis Huang dlh4fx
+//Wyatt Tinsley wjt6tq
 
+//gets called when window is first loaded, hide all forms until user selects from dropdown
 window.onload = function () {
     document.getElementById("short_answer").style.display="none";
     document.getElementById("true_false").style.display="none";
@@ -7,7 +9,7 @@ window.onload = function () {
 }
 
 
-
+//depending on dropdown menu selection value, a form will be made visible while others are hidden
 function formSelect() {
 	var value = document.getElementById("questions").value;
 
